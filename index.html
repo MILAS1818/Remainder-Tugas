@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Rekap Tugas</title>
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Rekap Tugas">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+  <header class="bg-indigo-600 text-white">
+    <div class="max-w-xl mx-auto px-4 py-5 flex items-center justify-between">
+      <div>
+        <h1 class="text-xl font-bold">📚 Rekap Tugas</h1>
+        <p id="stats" class="text-indigo-100 text-sm mt-0.5">Memuat...</p>
+      </div>
+      <button id="btn-install" class="hidden bg-white text-indigo-600 text-sm font-semibold px-3 py-1.5 rounded-lg">
+        Install
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-xl mx-auto px-4 py-5 space-y-6">
+
+    <!-- Form tambah tugas -->
+    <form id="task-form" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 space-y-3">
+      <h2 class="font-semibold">Tambah Tugas Baru</h2>
+      <div>
+        <label for="name" class="block text-sm text-slate-600 mb-1">Nama Tugas</label>
+        <input id="name" required maxlength="100" placeholder="Contoh: Laporan Praktikum 3"
+          class="w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label for="category" class="block text-sm text-slate-600 mb-1">Kategori / Mata Kuliah</label>
+          <input id="category" required maxlength="50" placeholder="Basis Data"
+            class="w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+        <div>
+          <label for="deadline" class="block text-sm text-slate-600 mb-1">Deadline</label>
+          <input id="deadline" type="date" required
+            class="w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+      </div>
+      <button type="submit"
+        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg py-2.5 transition">
+        + Tambah Tugas
+      </button>
+    </form>
+
+    <!-- Belum selesai -->
+    <section>
+      <h2 class="font-semibold mb-2">Belum Selesai <span id="count-todo" class="text-slate-400 font-normal"></span></h2>
+      <ul id="list-todo" class="space-y-2"></ul>
+    </section>
+
+    <!-- Sudah selesai -->
+    <section>
+      <h2 class="font-semibold mb-2">Sudah Selesai <span id="count-done" class="text-slate-400 font-normal"></span></h2>
+      <ul id="list-done" class="space-y-2"></ul>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

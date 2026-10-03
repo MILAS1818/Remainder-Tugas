@@ -1,0 +1,30 @@
+/* Aman untuk layar HP berponi/notch */
+body {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Checkbox lebih besar agar mudah disentuh */
+.task-check {
+  width: 1.4rem;
+  height: 1.4rem;
+  accent-color: #4f46e5;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Tugas selesai */
+.task-done .task-title {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* Animasi kecil saat item muncul */
+.task-item {
+  animation: pop-in .18s ease-out;
+}
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
